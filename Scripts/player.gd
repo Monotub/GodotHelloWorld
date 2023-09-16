@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var move_speed: int = 500
+var move_speed: int = 800 # 500 is default
 var can_shoot: bool = true
 var can_grenade: bool = true
 
@@ -13,7 +13,6 @@ func _process(_delta):
 	var move_dir = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = move_dir * move_speed
 	move_and_slide()
-	
 	# Rotation
 	look_at(get_global_mouse_position())
 	
@@ -25,6 +24,7 @@ func _process(_delta):
 		var selected_marker = laser_markers[randi() % laser_markers.size()]
 		can_shoot = false
 		$ShootTimer.start()
+		$LaserParticles.restart()
 		player_shooting.emit(selected_marker.global_position, look_dir)
 		
 	if Input.is_action_pressed("Secondary_Action") and can_grenade:

@@ -1,17 +1,201 @@
-[gd_scene load_steps=4 format=3 uid="uid://fv6pmhd0uxir"]
+[gd_scene load_steps=25 format=3 uid="uid://fv6pmhd0uxir"]
 
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_0xien"]
 [ext_resource type="PackedScene" uid="uid://bh75wch26n1xj" path="res://Scenes/gate.tscn" id="2_63rcy"]
+[ext_resource type="Texture2D" uid="uid://ctglp2886miwa" path="res://graphics/ground/stones.png" id="2_vj7ge"]
+[ext_resource type="Texture2D" uid="uid://c3ceivn2bnkkf" path="res://graphics/decals/dirt_patch.png" id="3_y8gjx"]
+[ext_resource type="Texture2D" uid="uid://b3k28l17vol6i" path="res://graphics/decals/blood.png" id="4_avi2u"]
 [ext_resource type="PackedScene" uid="uid://di0vdebesi6p5" path="res://Scenes/player.tscn" id="4_hisjj"]
+[ext_resource type="Texture2D" uid="uid://by2vojyav561e" path="res://graphics/tilesets/outside_walls.png" id="5_d4fo3"]
+[ext_resource type="Texture2D" uid="uid://bc8fw1o5e5im1" path="res://graphics/tilesets/soil.png" id="6_h6kyk"]
+[ext_resource type="PackedScene" uid="uid://c3qf3jsrje1m7" path="res://Scenes/house.tscn" id="7_uk6xt"]
+[ext_resource type="PackedScene" uid="uid://bnq1hyloyvalm" path="res://Scenes/steam_vent.tscn" id="8_jtoyi"]
+[ext_resource type="PackedScene" uid="uid://b0twm3l1l86tx" path="res://Scenes/light_fan_animation.tscn" id="9_l0o3l"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_461gs"]
+polygon = PackedVector2Array(-67, -62, 195, -58, 195, 58, -71, 64)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_d3i3u"]
+polygon = PackedVector2Array(-62, -67, -58, 195, 58, 195, 64, -71)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2pp3m"]
+polygon = PackedVector2Array(-57, 195, -58, -195, 58, -195, 59, 195)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_74c5y"]
+polygon = PackedVector2Array(-57, 44, -58, -195, 58, -195, 57, 44)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uv231"]
+polygon = PackedVector2Array(-195, -57, 195, -58, 195, 58, -195, 59)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0hlke"]
+polygon = PackedVector2Array(-59, -64, 195, -58, 195, 58, 61, 58, 59, 195, -59, 195)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x8ytf"]
+polygon = PackedVector2Array(-64, 59, -58, -195, 58, -195, 58, -61, 195, -59, 195, 59)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_b54cr"]
+polygon = PackedVector2Array(67, -62, -195, -58, -195, 58, 71, 64)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gjwip"]
+polygon = PackedVector2Array(64, -59, 58, 195, -58, 195, -58, 61, -195, 59, -195, -59)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_c62wg"]
+polygon = PackedVector2Array(59, 64, -195, 58, -195, -58, -61, -58, -59, -195, 59, -195)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ycc1b"]
+resource_name = "Walls"
+texture = ExtResource("5_d4fo3")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_461gs")
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-66.5059, -64.5416, 51.3526, -65.664, 54.1588, -58.9293, 195, -58.9293, 195, 58.6899, 55.5079, 58.6899, 51.9724, 65.7609, -66.1145, 62.9325)
+1:0/0 = 0
+1:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_uv231")
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-195, -57.9563, 195, -60.4762, 195, 55.4365, -195, 57.9564)
+2:0/0 = 0
+2:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_b54cr")
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(66.5059, -64.5416, -51.3526, -65.664, -54.1588, -58.9293, -195, -58.9293, -195, 58.6899, -55.5079, 58.6899, -51.9724, 65.7609, 66.1145, 62.9325)
+0:1/0 = 0
+0:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_d3i3u")
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64.5416, -66.5059, -65.664, 51.3526, -58.9293, 54.1588, -58.9293, 195, 58.6899, 195, 58.6899, 55.5079, 65.7609, 51.9724, 62.9325, -66.1145)
+1:1/0 = 0
+1:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_0hlke")
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(195, 55.4365, 56.6964, 57.9564, 60.4762, 195, -61.7361, 195, -64.256, -62.9961, 195, -68.0358)
+2:1/0 = 0
+2:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_gjwip")
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-55.4365, 195, -57.9564, 56.6964, -195, 60.4762, -195, -61.7361, 62.9961, -64.256, 68.0358, 195)
+0:2/0 = 0
+0:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_2pp3m")
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(57.9563, -195, 60.4762, 195, -61.7361, 195, -57.9564, -195)
+1:2/0 = 0
+1:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_x8ytf")
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(55.4365, -195, 57.9564, -56.6964, 195, -60.4762, 195, 61.7361, -62.9961, 64.256, -68.0358, -195)
+2:2/0 = 0
+2:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_c62wg")
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-195, -55.4365, -56.6964, -57.9564, -60.4762, -195, 61.7361, -195, 64.256, 62.9961, -195, 68.0358)
+0:3/0 = 0
+0:3/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_74c5y")
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60.0517, 43.776, -61.1742, -76.3274, -58.9293, -195, 58.6899, -195, 61.1742, -76.3274, 63.4191, 47.1434)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xvlup"]
+resource_name = "Soil"
+texture = ExtResource("6_h6kyk")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_5v4do"]
+tile_size = Vector2i(390, 390)
+occlusion_layer_0/light_mask = 1
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 11
+sources/0 = SubResource("TileSetAtlasSource_ycc1b")
+sources/1 = SubResource("TileSetAtlasSource_xvlup")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_0xien")
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="Soil" type="Sprite2D" parent="Ground"]
+texture_repeat = 2
+position = Vector2(589, 498)
+texture = ExtResource("2_vj7ge")
+region_enabled = true
+region_rect = Rect2(-4903.98, -3976.24, 16000, 10000)
+
+[node name="Decoration" type="Sprite2D" parent="Ground"]
+modulate = Color(1, 0.823529, 0.627451, 0.8)
+position = Vector2(-721, 1017)
+texture = ExtResource("3_y8gjx")
+
+[node name="Blood" type="Sprite2D" parent="Ground"]
+position = Vector2(984, 471)
+texture = ExtResource("4_avi2u")
+
+[node name="TileMap" type="TileMap" parent="Ground"]
+position = Vector2(-4, -4)
+tile_set = SubResource("TileSet_5v4do")
+format = 2
+layer_0/name = "Soil"
+layer_0/tile_data = PackedInt32Array(-131066, 1, 0, -131065, 65537, 0, -131064, 131073, 0, -65529, 65537, 2, -65530, 1, 2, -65528, 131073, 2)
+layer_1/name = "Walls"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array(-3, 131072, 0, -4, 65536, 0, -5, 65536, 0, -6, 65536, 0, -7, 65536, 1, 65529, 0, 2, 131065, 0, 2, -131067, 0, 0, -131066, 65536, 0, -131065, 65536, 0, -131064, 65536, 0, -131063, 131072, 1, -65527, 0, 2, 9, 0, 2, 65545, 0, 2, 131081, 0, 2, 196617, 0, 3, 196601, 0, 3)
+
+[node name="House" parent="Ground" instance=ExtResource("7_uk6xt")]
+position = Vector2(-6365, 3477)
+rotation = -0.65101
+
+[node name="SteamVent" parent="Ground" instance=ExtResource("8_jtoyi")]
+position = Vector2(60, 441)
+
+[node name="SteamVent2" parent="Ground" instance=ExtResource("8_jtoyi")]
+position = Vector2(1149, 449)
+
+[node name="LightFanAnimation" parent="Ground" instance=ExtResource("9_l0o3l")]
+position = Vector2(-2855, 1836)
+autoplay = "default"
+frame_progress = 0.418597
 
 [node name="Gate" parent="." instance=ExtResource("2_63rcy")]
 position = Vector2(542, -505)
 
 [node name="Player" parent="." instance=ExtResource("4_hisjj")]
-position = Vector2(217, 496)
+position = Vector2(401, 506)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.6, 0.6)
+position_smoothing_enabled = true
 
 [node name="Projectiles" type="Node2D" parent="."]
 
