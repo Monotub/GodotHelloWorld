@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cci6772m8d4hq"]
+[gd_scene load_steps=52 format=3 uid="uid://cci6772m8d4hq"]
 
 [ext_resource type="PackedScene" uid="uid://fv6pmhd0uxir" path="res://Scenes/Levels/level.tscn" id="1_iushv"]
 [ext_resource type="Script" path="res://Scripts/outside.gd" id="2_g6rp7"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bnq1hyloyvalm" path="res://Scenes/Objects/steam_vent.tscn" id="8_48wuh"]
 [ext_resource type="PackedScene" uid="uid://b0twm3l1l86tx" path="res://Scenes/light_fan_animation.tscn" id="9_4ea2e"]
 [ext_resource type="PackedScene" uid="uid://bh75wch26n1xj" path="res://Scenes/gate.tscn" id="9_qylho"]
+[ext_resource type="PackedScene" uid="uid://b61qkaowq1lpm" path="res://Scenes/Enemies/scout.tscn" id="13_mcbse"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mpr6b"]
 texture = ExtResource("6_86o7m")
@@ -445,7 +446,15 @@ position = Vector2(67, 584)
 [node name="SteamVent2" parent="Ground" index="7" instance=ExtResource("8_48wuh")]
 position = Vector2(1113, 558)
 
-[node name="Player" parent="." index="2"]
+[node name="Enemies" type="Node2D" parent="." index="2"]
+
+[node name="Scout" parent="Enemies" index="0" instance=ExtResource("13_mcbse")]
+position = Vector2(-812, 1107)
+
+[node name="Scout2" parent="Enemies" index="1" instance=ExtResource("13_mcbse")]
+position = Vector2(2384, 1113)
+
+[node name="Player" parent="." index="4"]
 position = Vector2(569, 588)
 
 [connection signal="player_entered_gate" from="Ground/Gate" to="." method="_on_gate_player_entered_gate"]

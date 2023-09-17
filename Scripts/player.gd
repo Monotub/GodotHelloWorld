@@ -10,16 +10,16 @@ signal player_shooting(pos, dir)
 signal player_grenading(pos, dir)
 
 
-
 func _process(_delta):
+	Globals.player_position = global_position
+	
 	# Input
 	var move_dir = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = move_dir * move_speed
 	move_and_slide()
+	
 	# Rotation
 	look_at(get_global_mouse_position())
-	
-	
 	var look_dir = (get_global_mouse_position() - position).normalized()
 	
 	if Input.is_action_pressed("Primary_Action") and can_shoot and Globals.laser_amount > 0:
