@@ -1,11 +1,14 @@
 extends CharacterBody2D
 
-var move_speed: int = 800 # 500 is default
+@export var max_speed: int = 800
+
+var move_speed: int = max_speed # 500 is default
 var can_shoot: bool = true
 var can_grenade: bool = true
 
 signal player_shooting(pos, dir)
 signal player_grenading(pos, dir)
+
 
 
 func _process(_delta):

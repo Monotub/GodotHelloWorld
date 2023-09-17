@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bh75wch26n1xj"]
 
 [ext_resource type="Texture2D" uid="uid://bhyc3ylx6nxr" path="res://graphics/objects/gate.png" id="1_qnkgk"]
-[ext_resource type="Script" path="res://Scenes/gate.gd" id="1_qs70a"]
+[ext_resource type="Script" path="res://Scripts/gate.gd" id="1_qs70a"]
 [ext_resource type="PackedScene" uid="uid://bxwtste0iyuek" path="res://Scenes/wall_light.tscn" id="3_q5g52"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvybn"]
@@ -28,6 +28,8 @@ shape = SubResource("RectangleShape2D_uvybn")
 
 [node name="WallLight" parent="." instance=ExtResource("3_q5g52")]
 position = Vector2(-788, 625)
+collision_layer = 4
+collision_mask = 11
 
 [node name="WallLight2" parent="." instance=ExtResource("3_q5g52")]
 position = Vector2(922, 628)
