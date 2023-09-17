@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b87cwmukt5rek"]
 
-[ext_resource type="PackedScene" uid="uid://bn8yqxr5jb3er" path="res://Containers/item_container.tscn" id="1_eei57"]
+[ext_resource type="PackedScene" uid="uid://bn8yqxr5jb3er" path="res://Scenes/Containers/item_container.tscn" id="1_eei57"]
 [ext_resource type="Script" path="res://Scripts/toilet.gd" id="2_jxefj"]
 [ext_resource type="Texture2D" uid="uid://c125rab1yhoom" path="res://graphics/objects/toilet.png" id="3_u6n57"]
 

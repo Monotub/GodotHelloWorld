@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmb7sbd2l1g4"]
+
+[ext_resource type="Theme" uid="uid://ba14lg4vvk2wx" path="res://Scenes/User Interface/main_theme.tres" id="1_2uwgh"]
+[ext_resource type="Script" path="res://Scripts/ui.gd" id="1_s1n16"]
+[ext_resource type="Texture2D" uid="uid://dus1ha7ng2io0" path="res://graphics/ui/bullet.png" id="1_so17f"]
+[ext_resource type="Texture2D" uid="uid://dqdakfo5oygm4" path="res://graphics/ui/grenade.png" id="3_xuqtf"]
+[ext_resource type="Texture2D" uid="uid://ckci3yuhdbg3u" path="res://graphics/ui/progress_bar/bg.png" id="4_02l0l"]
+[ext_resource type="Texture2D" uid="uid://8p1la0kw6xfo" path="res://graphics/ui/progress_bar/over.png" id="5_ratvo"]
+[ext_resource type="Texture2D" uid="uid://ok20b43clpy" path="res://graphics/ui/progress_bar/progress.png" id="6_7wkcm"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_s1n16")
+
+[node name="LaserCounter" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.01
+anchor_top = 0.92
+anchor_right = 0.01
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LaserCounter"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="LaserCounter/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_2uwgh")
+text = "99"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="LaserCounter/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_so17f")
+expand_mode = 4
+
+[node name="GenadeCounter" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.06
+anchor_top = 0.92
+anchor_right = 0.07
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GenadeCounter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="GenadeCounter/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_2uwgh")
+text = "99"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="GenadeCounter/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_xuqtf")
+expand_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(0, 75)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -40.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="MarginContainer"]
+layout_mode = 2
+texture_under = ExtResource("4_02l0l")
+texture_over = ExtResource("5_ratvo")
+texture_progress = ExtResource("6_7wkcm")

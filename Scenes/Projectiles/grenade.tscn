@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://b0u4lo8lmxxpr"]
 
-[ext_resource type="Script" path="res://Projectiles/grenade.gd" id="1_8xorl"]
+[ext_resource type="Script" path="res://Scenes/Projectiles/grenade.gd" id="1_8xorl"]
 [ext_resource type="Texture2D" uid="uid://qnd4b0m1p32r" path="res://graphics/projectiles/grenade.png" id="1_j3e3o"]
 [ext_resource type="Texture2D" uid="uid://tl02nrxffomv" path="res://graphics/explosions/explosion_3.png" id="3_lj0ue"]
 [ext_resource type="Texture2D" uid="uid://cbeekt82meh36" path="res://graphics/lights/textures/circle.png" id="4_lw5jf"]

@@ -1,6 +1,6 @@
-[gd_scene load_steps=53 format=3 uid="uid://cci6772m8d4hq"]
+[gd_scene load_steps=51 format=3 uid="uid://cci6772m8d4hq"]
 
-[ext_resource type="PackedScene" uid="uid://fv6pmhd0uxir" path="res://Scenes/level.tscn" id="1_iushv"]
+[ext_resource type="PackedScene" uid="uid://fv6pmhd0uxir" path="res://Scenes/Levels/level.tscn" id="1_iushv"]
 [ext_resource type="Script" path="res://Scripts/outside.gd" id="2_g6rp7"]
 [ext_resource type="Texture2D" uid="uid://ctglp2886miwa" path="res://graphics/ground/stones.png" id="2_s162i"]
 [ext_resource type="Texture2D" uid="uid://c3ceivn2bnkkf" path="res://graphics/decals/dirt_patch.png" id="3_dcepc"]
@@ -9,11 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://by2vojyav561e" path="res://graphics/tilesets/outside_walls.png" id="5_m5fcm"]
 [ext_resource type="Texture2D" uid="uid://bc8fw1o5e5im1" path="res://graphics/tilesets/soil.png" id="6_86o7m"]
 [ext_resource type="PackedScene" uid="uid://c3qf3jsrje1m7" path="res://Scenes/house.tscn" id="7_yee78"]
-[ext_resource type="PackedScene" uid="uid://bnq1hyloyvalm" path="res://Scenes/steam_vent.tscn" id="8_48wuh"]
+[ext_resource type="PackedScene" uid="uid://bnq1hyloyvalm" path="res://Scenes/Objects/steam_vent.tscn" id="8_48wuh"]
 [ext_resource type="PackedScene" uid="uid://b0twm3l1l86tx" path="res://Scenes/light_fan_animation.tscn" id="9_4ea2e"]
 [ext_resource type="PackedScene" uid="uid://bh75wch26n1xj" path="res://Scenes/gate.tscn" id="9_qylho"]
-[ext_resource type="PackedScene" uid="uid://b87cwmukt5rek" path="res://Containers/toilet.tscn" id="11_dd6jf"]
-[ext_resource type="PackedScene" uid="uid://m65ilfeirmih" path="res://Containers/box.tscn" id="12_fqiu8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mpr6b"]
 texture = ExtResource("6_86o7m")
@@ -447,11 +445,8 @@ position = Vector2(67, 584)
 [node name="SteamVent2" parent="Ground" index="7" instance=ExtResource("8_48wuh")]
 position = Vector2(1113, 558)
 
-[node name="Box" parent="." index="1" instance=ExtResource("12_fqiu8")]
-position = Vector2(1428, 1423)
-
-[node name="Toilet" parent="." index="2" instance=ExtResource("11_dd6jf")]
-position = Vector2(269, 1419)
+[node name="Player" parent="." index="2"]
+position = Vector2(569, 588)
 
 [connection signal="player_entered_gate" from="Ground/Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]

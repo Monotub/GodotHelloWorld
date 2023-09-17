@@ -1,14 +1,13 @@
 extends Node2D
 class_name LevelParent
 
-var laser_scene: PackedScene = preload("res://Projectiles/laser.tscn")
-var grenade_scene: PackedScene = preload("res://Projectiles/grenade.tscn")
+var laser_scene: PackedScene = preload("res://Scenes/Projectiles/laser.tscn")
+var grenade_scene: PackedScene = preload("res://Scenes/Projectiles/grenade.tscn")
 
 
-func _on_gate_player_entered_gate():
-	var tween = create_tween()
-	tween.tween_property($Player, "move_speed", 0, 0.3)
-
+func _ready():
+	$UI.update_laser_text()
+	$UI.update_grenade_text()
 
 func _on_player_player_shooting(pos, dir):
 	var laser = laser_scene.instantiate()
@@ -16,6 +15,7 @@ func _on_player_player_shooting(pos, dir):
 	laser.rotation_degrees = rad_to_deg(dir.angle()) + 90
 	laser.direction = dir
 	$Projectiles.add_child(laser)
+	$UI.update_laser_text()
 
 
 func _on_player_player_grenading(pos, dir):
@@ -23,6 +23,7 @@ func _on_player_player_grenading(pos, dir):
 	grenade.position = pos
 	grenade.linear_velocity = dir * grenade.speed
 	$Projectiles.add_child(grenade)
+	$UI.update_grenade_text()
 
 
 func _on_house_player_entered():
