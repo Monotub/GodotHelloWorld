@@ -10,8 +10,8 @@ size = Vector2(356, 250)
 [node name="Box" instance=ExtResource("1_t7s4g")]
 script = ExtResource("2_2fu75")
 
-[node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("3_pfkfr")
-
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("RectangleShape2D_pe7dr")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("3_pfkfr")

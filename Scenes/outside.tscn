@@ -399,30 +399,30 @@ sources/2 = SubResource("TileSetAtlasSource_cigdk")
 [node name="Outside" instance=ExtResource("1_iushv")]
 script = ExtResource("2_g6rp7")
 
-[node name="Stones" type="Sprite2D" parent="." index="0"]
+[node name="Stones" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
 position = Vector2(11, -14)
 texture = ExtResource("2_s162i")
 region_enabled = true
-region_rect = Rect2(-704.756, -389.945, 15000, 10000)
+region_rect = Rect2(-704.756, -389.945, 15000, 15000)
 
-[node name="Blood" type="Sprite2D" parent="Ground" index="0"]
+[node name="Blood" type="Sprite2D" parent="Ground" index="1"]
 position = Vector2(1022, 626)
 rotation = 2.35562
 texture = ExtResource("4_abkw8")
 
-[node name="DirtPatch" type="Sprite2D" parent="Ground" index="1"]
+[node name="DirtPatch" type="Sprite2D" parent="Ground" index="2"]
 position = Vector2(-701, 1112)
 texture = ExtResource("3_dcepc")
 
-[node name="Gate" parent="Ground" index="2" instance=ExtResource("9_qylho")]
+[node name="Gate" parent="Ground" index="3" instance=ExtResource("9_qylho")]
 position = Vector2(561, -514)
 
-[node name="TileMap" type="TileMap" parent="Ground" index="3"]
+[node name="TileMap" type="TileMap" parent="Ground" index="4"]
 tile_set = SubResource("TileSet_6clo7")
 format = 2
 layer_0/name = "Ground"
-layer_0/tile_data = PackedInt32Array(-3, 131074, 0, -4, 65538, 0, -5, 65538, 0, -6, 65538, 0, -7, 65538, 0, -8, 65538, 0, 131063, 2, 3, -9, 65538, 1, 65527, 2, 2)
+layer_0/tile_data = PackedInt32Array(-3, 131074, 0, -4, 65538, 0, -5, 65538, 0, -6, 65538, 0, -7, 65538, 0, -8, 65538, 0, 131063, 2, 3, -9, 65538, 1, 65527, 2, 2, -131067, 2, 0, -131066, 65538, 0, -131065, 65538, 0, -131064, 65538, 0, -131063, 65538, 0, -131062, 131074, 1, 65546, 65538, 2, 65547, 131074, 1, 524299, 131074, 2, 524298, 65538, 0, 524297, 65538, 0, 524296, 65538, 0, 524295, 65538, 0, 524294, 65538, 0, 524293, 65538, 0, 524292, 65538, 0, 524291, 65538, 0, 524290, 65538, 0, 524289, 65538, 0, 524288, 65538, 0, 589823, 65538, 0, 589822, 65538, 0, 589821, 65538, 0, 589820, 65538, 0, 589819, 65538, 0, 589818, 2, 0, -65526, 2, 2, 10, 2, 2, 131083, 2, 2, 196619, 2, 2, 262155, 2, 2, 327691, 2, 2, 393227, 2, 2, 458763, 2, 2)
 layer_1/name = "Walls"
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)
@@ -431,7 +431,7 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array()
 
-[node name="House" parent="Ground" index="4" instance=ExtResource("7_yee78")]
+[node name="House" parent="Ground" index="5" instance=ExtResource("7_yee78")]
 position = Vector2(-6149, 2853)
 rotation = -0.656474
 scale = Vector2(1.00059, 1.00086)
@@ -441,16 +441,16 @@ position = Vector2(3850.17, 829.217)
 autoplay = "default"
 frame_progress = 0.538428
 
-[node name="SteamVent" parent="Ground" index="5" instance=ExtResource("8_48wuh")]
+[node name="SteamVent" parent="Ground" index="6" instance=ExtResource("8_48wuh")]
 position = Vector2(67, 584)
 
-[node name="SteamVent2" parent="Ground" index="6" instance=ExtResource("8_48wuh")]
+[node name="SteamVent2" parent="Ground" index="7" instance=ExtResource("8_48wuh")]
 position = Vector2(1113, 558)
 
-[node name="Box" parent="." index="2" instance=ExtResource("12_fqiu8")]
+[node name="Box" parent="." index="1" instance=ExtResource("12_fqiu8")]
 position = Vector2(1428, 1423)
 
-[node name="Toilet" parent="." index="3" instance=ExtResource("11_dd6jf")]
+[node name="Toilet" parent="." index="2" instance=ExtResource("11_dd6jf")]
 position = Vector2(269, 1419)
 
 [connection signal="player_entered_gate" from="Ground/Gate" to="." method="_on_gate_player_entered_gate"]
