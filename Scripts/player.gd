@@ -39,6 +39,13 @@ func _process(_delta):
 		player_grenading.emit(selected_marker, look_dir)
 
 
+func hit(type: String):
+	if type == "laser":
+		Globals.health -= 10
+	elif type == "grenade":
+		Globals.health -= 30
+	
+	
 func _on_shoot_timer_timeout():
 	can_shoot = true
 

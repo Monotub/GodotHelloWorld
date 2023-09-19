@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fe1ly"]
 radius = 9.0
-height = 116.0
+height = 88.0
 
 [node name="Laser" type="Area2D"]
 rotation = 1.5708
@@ -15,7 +15,7 @@ collision_mask = 7
 script = ExtResource("1_seekc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1, 24)
+position = Vector2(-0.999949, 38)
 texture = ExtResource("1_8ln0b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

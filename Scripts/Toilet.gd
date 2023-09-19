@@ -1,7 +1,7 @@
 extends ItemParent
 
 
-func hit():
+func hit(type: String):
 	if not opened:
 		opened = true
 		$LidSprite.hide()

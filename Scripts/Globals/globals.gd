@@ -14,7 +14,12 @@ var grenade_amount = 5:
 
 var health = 100: 
 	set(value):
-		health = value
+		health = min(value, 100)
 		stat_changed.emit()
 
 var player_position: Vector2
+
+func custom_timer():
+	# Creating timer in code instead of a node in the tree
+	# We're not using this. It's just for future reference
+	await get_tree().create_timer(0.5).timeout

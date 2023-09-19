@@ -28,7 +28,7 @@ color_ramp = SubResource("GradientTexture1D_vffg4")
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pitq0"]
 polygon = PackedVector2Array(-57, -32, -53, -43, -44, -47, -32, -48, -30, -53, -17, -60, -15, -57, -2, -61, 8, -60, 19, -64, 31, -55, 31, -50, 40, -42, 44, -32, 58, -26, 72, -12, 86, -12, 92, -8, 124, 5, 129, 17, 125, 30, 116, 34, 104, 35, 95, 44, 90, 51, 58, 51, 55, 41, 38, 39, 29, 45, 19, 45, 7, 54, -17, 61, -35, 56, -41, 48, -42, 43, -48, 32, -56, 26, -60, 11, -64, 3, -64, -8, -64, -22)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Entities"]]
 collision_mask = 31
 script = ExtResource("1_8pvj4")
 
@@ -70,6 +70,7 @@ one_shot = true
 explosiveness = 1.0
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
 occluder = SubResource("OccluderPolygon2D_pitq0")
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
