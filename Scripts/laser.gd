@@ -11,10 +11,6 @@ func _process(delta):
 func _on_body_entered(body):
 	if body.has_method("hit"):
 		body.hit("laser")
-		
-	if "is_enemy" in body: # Can be used to check for methosds or properties
-		print("Dude, this thing looks dangerous!")
-		
 	queue_free()
 
 

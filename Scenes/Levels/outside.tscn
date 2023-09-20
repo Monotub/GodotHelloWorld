@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cci6772m8d4hq"]
+[gd_scene load_steps=55 format=3 uid="uid://cci6772m8d4hq"]
 
 [ext_resource type="PackedScene" uid="uid://fv6pmhd0uxir" path="res://Scenes/Levels/level.tscn" id="1_iushv"]
 [ext_resource type="Script" path="res://Scripts/outside.gd" id="2_g6rp7"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://m65ilfeirmih" path="res://Scenes/Containers/box.tscn" id="13_ct30w"]
 [ext_resource type="PackedScene" uid="uid://b61qkaowq1lpm" path="res://Scenes/Enemies/scout.tscn" id="13_mcbse"]
 [ext_resource type="PackedScene" uid="uid://bgrpfjfdkxsgc" path="res://Scenes/Enemies/bug.tscn" id="15_apmo8"]
+[ext_resource type="PackedScene" uid="uid://dqd3b0rb3bl4r" path="res://Scenes/drone.tscn" id="16_ru2is"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mpr6b"]
 texture = ExtResource("6_86o7m")
@@ -463,22 +464,25 @@ position = Vector2(-812, 1107)
 position = Vector2(2384, 1113)
 
 [node name="Bug" parent="Enemies" index="2" instance=ExtResource("15_apmo8")]
-position = Vector2(608, 2071)
+position = Vector2(2660, -149)
 
 [node name="Bug2" parent="Enemies" index="3" instance=ExtResource("15_apmo8")]
-position = Vector2(992, 2559)
+position = Vector2(3044, 339)
 
 [node name="Bug3" parent="Enemies" index="4" instance=ExtResource("15_apmo8")]
-position = Vector2(1568, 2031)
+position = Vector2(3620, -189)
 
 [node name="Bug4" parent="Enemies" index="5" instance=ExtResource("15_apmo8")]
-position = Vector2(1113, 2071)
+position = Vector2(3165, -149)
 
 [node name="Bug5" parent="Enemies" index="6" instance=ExtResource("15_apmo8")]
-position = Vector2(529, 2471)
+position = Vector2(2581, 251)
 
 [node name="Bug6" parent="Enemies" index="7" instance=ExtResource("15_apmo8")]
-position = Vector2(1577, 2575)
+position = Vector2(3629, 355)
+
+[node name="Drone" parent="Enemies" index="8" instance=ExtResource("16_ru2is")]
+position = Vector2(-46, 1451)
 
 [node name="Player" parent="." index="5"]
 position = Vector2(569, 588)

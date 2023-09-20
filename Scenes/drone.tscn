@@ -1,19 +1,134 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqd3b0rb3bl4r"]
+[gd_scene load_steps=9 format=3 uid="uid://dqd3b0rb3bl4r"]
 
 [ext_resource type="Script" path="res://Scripts/drone.gd" id="1_qfmk0"]
 [ext_resource type="Texture2D" uid="uid://cfc66c5mk3aud" path="res://graphics/enemies/drone.png" id="1_x6bs5"]
+[ext_resource type="Texture2D" uid="uid://tl02nrxffomv" path="res://graphics/explosions/explosion_3.png" id="3_gnuqi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wmdq8"]
 radius = 75.8024
 
-[node name="Drone" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_k7402"]
+radius = 1096.73
+
+[sub_resource type="Animation" id="Animation_mismx"]
+resource_name = "Explosion"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Explosion:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Explosion:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.4, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Explosion:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.45),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"explody_damage"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_qovcx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Explosion:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [23]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kv6bw"]
+_data = {
+"Explosion": SubResource("Animation_mismx"),
+"RESET": SubResource("Animation_qovcx")
+}
+
+[node name="Drone" type="CharacterBody2D" groups=["Entities"]]
 collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_qfmk0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+rotation = 1.5708
 texture = ExtResource("1_x6bs5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CircleShape2D_wmdq8")
+
+[node name="NoticeArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea"]
+shape = SubResource("CircleShape2D_k7402")
+
+[node name="Explosion" type="Sprite2D" parent="."]
+texture = ExtResource("3_gnuqi")
+hframes = 8
+vframes = 8
+frame = 23
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kv6bw")
+}
+
+[connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]

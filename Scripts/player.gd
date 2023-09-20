@@ -44,6 +44,8 @@ func hit(type: String):
 		Globals.health -= 10
 	elif type == "grenade":
 		Globals.health -= 30
+	elif type == "drone":
+		Globals.health -= 50
 	
 	
 func _on_shoot_timer_timeout():
