@@ -12,12 +12,12 @@ func _ready():
 	
 
 func _process(delta):
-	var tween = get_tree().create_tween()
 	
 	if active: 
 		look_at(Globals.player_position)
 		var direction = (Globals.player_position - position).normalized()
 		velocity = direction * move_speed
+		var tween = get_tree().create_tween()
 		tween.tween_property(self, "move_speed", 900, 2)
 		var collision = move_and_collide(velocity * delta)
 		if collision:
