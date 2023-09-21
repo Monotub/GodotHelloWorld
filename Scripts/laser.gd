@@ -4,6 +4,10 @@ extends Area2D
 var direction: Vector2 = Vector2.UP
 
 
+func _ready():
+	$AudioStreamPlayer2D.play()
+	
+
 func _process(delta):
 	position += direction * speed * delta
 
